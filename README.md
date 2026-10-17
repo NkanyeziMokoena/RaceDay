@@ -128,3 +128,9 @@ data: Holds the returned information, such as a user, event, category, or result
 ok(): Creates a successful response with status code 200.
 created(): Creates a response with status code 201 when a resource has been created.
 fail(): Creates an error response using the specified status code and message.
+The enrolment_data class manages participant enrolments in the RaceDay API. It uses AppDbContext and Entity Framework Core to register participants, retrieve enrolment information, and cancel registrations.
+enrol_participant(): Registers a participant in a race category, automatically assigns a bib number (such as B001 or B002), and checks that the participant has not already enrolled and that the category is not full.
+get_my_enrolments(): Retrieves all enrolments belonging to the logged-in Participant, including the related category and event details.
+get_category_enrolments(): Retrieves all enrolments for a category after verifying that the Organiser owns the associated event.
+cancel_enrolment(): Cancels an enrolment if the request is made by the enrolled Participant or the Organiser who owns the event.
+Error handling: Uses try-catch to handle database update errors during enrolment and returns a 409 Conflict response if the registration cannot be completed.
