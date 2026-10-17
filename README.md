@@ -41,3 +41,11 @@ Update profile (PUT /api/users/me): Allows the logged-in user to update their fu
 Session authorisation: The [session_authorize] attribute protects the entire controller, ensuring that only logged-in users can access these endpoints.
 User identification: The current_user_id property identifies the logged-in user so they can only access and update their own profile.
 Response handling: The respond() method returns the appropriate HTTP status code and response data.
+The Category model represents a race category in the RaceDay API. It stores the category's details and defines its relationships with events and participant enrolments.
+CategoryId: Uniquely identifies each category.
+EventId: Identifies the event to which the category belongs.
+Name: Stores the category name.
+DistanceKm: Specifies the race distance in kilometres.
+MaxParticipants: Sets the maximum number of participants, defaulting to 100.
+Event: Represents the event associated with the category.
+Enrolments: Stores the list of participant enrolments for the category.
