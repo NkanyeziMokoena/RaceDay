@@ -113,3 +113,11 @@ Category configuration: Stores category details, sets the default participant li
 Enrolment configuration: Sets default enrolment dates and ensures that a participant cannot enrol in the same category twice and that bib numbers are unique within a category.
 Result configuration: Stores finishing times and statuses and establishes a one-to-one relationship between an enrolment and its result.
 Relationships and constraints: Uses primary keys, foreign keys, unique indexes, and delete behaviours to maintain data integrity.
+The category_data class handles database operations for race categories in the RaceDay API. It uses AppDbContext to retrieve, create, update, and delete categories.
+get_categories_for_event(): Retrieves categories for a specific event, ordered by distance. Returns a 404 error if the event does not exist.
+create_category(): Adds a new category to an event after checking that the event exists, the Organiser owns it, and the category details are valid.
+update_category(): Updates an existing category's name, distance, and maximum participant limit after checking ownership and validating the information.
+delete_category(): Deletes a category after verifying that it exists and belongs to the Organiser making the request.
+Validation: Uses the validator.check_category() method to check category details before saving changes.
+Database operations: Uses Entity Framework Core methods such as Find(), Add(), Remove(), and SaveChanges() to manage records.
+Response handling: Returns a db_result containing the appropriate HTTP status code, data, or error message.
