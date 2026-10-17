@@ -137,3 +137,9 @@ Error handling: Uses try-catch to handle database update errors during enrolment
 update_event() – Updates an existing event after checking that it exists, that the logged-in organiser owns it, and that the new details are valid.
 delete_event() – Deletes an event only if it exists and belongs to the logged-in organiser.
 Important Features
+Uses AppDbContext to communicate with the database.
+Uses validator.check_event() to validate event information.
+Uses EventDto.From() to convert event records into DTOs for API responses.
+Uses db_result to return success messages, event data, and error responses.
+Returns appropriate HTTP status codes, such as 400 for invalid information, 403 for unauthorised actions, and 404 when an event is not found.
+Uses AsNoTracking() when retrieving events for read-only operations to improve efficiency
