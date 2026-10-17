@@ -104,3 +104,12 @@ IIS Express profile: Allows the application to run using IIS Express.
 launchBrowser: Automatically opens a browser when the application starts.
 launchUrl: Opens the Swagger page for testing API endpoints.
 ASPNETCORE_ENVIRONMENT: Sets the environment to Development, enabling development-specific configuration.
+The AppDbContext class connects the RaceDay API to its database using Entity Framework Core and follows the Code First approach. It defines the database tables, relationships, constraints, and default values.
+Database tables: The DbSet properties define tables for Roles, Users, Events, Categories, Enrolments, and Results.
+Role configuration: Defines Organiser and Participant roles and ensures that role names are unique.
+User configuration: Sets required fields, limits field lengths, ensures email addresses are unique, and links each user to a role.
+Event configuration: Defines event details, data types, and the relationship between events and their Organisers.
+Category configuration: Stores category details, sets the default participant limit to 100, and links categories to events.
+Enrolment configuration: Sets default enrolment dates and ensures that a participant cannot enrol in the same category twice and that bib numbers are unique within a category.
+Result configuration: Stores finishing times and statuses and establishes a one-to-one relationship between an enrolment and its result.
+Relationships and constraints: Uses primary keys, foreign keys, unique indexes, and delete behaviours to maintain data integrity.
