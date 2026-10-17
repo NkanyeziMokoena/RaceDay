@@ -83,3 +83,11 @@ FinishTime: Stores the finishing time. It is optional.
 Position: Records the participant's finishing position. It is optional.
 Status: Tracks the result status, defaulting to "Pending".
 Enrolment: Links the result to the relevant enrolment.
+The User model represents a registered user in the RaceDay API. It stores the user's account information and links the user to their assigned role.
+UserId: Uniquely identifies each user.
+RoleId: Identifies the user's role, such as Organiser or Participant.
+FullName: Stores the user's full name.
+Email: Stores the user's email address.
+PasswordHash: Stores the hashed password instead of the original password.
+CreatedAt: Records when the account was created, defaulting to the current date and time.
+Role: Links the user to their assigned role.
