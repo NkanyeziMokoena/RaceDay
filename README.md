@@ -18,3 +18,8 @@ View categories (GET): Allows anyone to view the categories belonging to an even
 Create category (POST): Allows an Organiser to add a category by providing its name, distance in kilometres, and maximum number of participants.
 Update category (PUT): Allows an Organiser to update an existing category's details.
 Delete category (DELETE): Allows an Organiser to delete a category, including its enrolments and results, as handled by the database class.
+The manage_enrolments controller manages participant registrations for race categories in the RaceDay API. It uses the enrolment_data class to handle database operations and inherits shared functionality from api_base.
+Enrol in a category (POST): Allows a logged-in Participant to enter a race category. A bib number is assigned automatically.
+View my enrolments (GET): Allows Participants to view their own enrolments.
+View category enrolments (GET): Allows an Organiser to view all enrolments for a category belonging to an event they own.
+Cancel enrolment (DELETE): Allows an enrolment to be cancelled by the enrolled Participant or the Organiser who owns the event, subject to the checks in the database class.
