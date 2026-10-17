@@ -121,3 +121,10 @@ delete_category(): Deletes a category after verifying that it exists and belongs
 Validation: Uses the validator.check_category() method to check category details before saving changes.
 Database operations: Uses Entity Framework Core methods such as Find(), Add(), Remove(), and SaveChanges() to manage records.
 Response handling: Returns a db_result containing the appropriate HTTP status code, data, or error message.
+The db_result class standardises the responses returned by database methods in the RaceDay API. It provides a status code, a message, and optional data that the controller uses to create an HTTP response.
+status: Stores the HTTP status code, defaulting to 200 (OK).
+message: Stores a success or error message.
+data: Holds the returned information, such as a user, event, category, or result. It can be null.
+ok(): Creates a successful response with status code 200.
+created(): Creates a response with status code 201 when a resource has been created.
+fail(): Creates an error response using the specified status code and message.
