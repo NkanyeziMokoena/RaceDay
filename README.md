@@ -76,3 +76,10 @@ EventDto: Returns event details, including the name, description, date, location
 CategoryDto: Returns race category information, including its name, event ID, distance, and maximum number of participants.
 EnrolmentDto: Returns enrolment details, including the participant's name, category, event, registration date, bib number, and status.
 ResultDto: Returns race result information, including the participant's name, bib number, finishing time, position, and result status.
+The Result model stores a participant's race results in the RaceDay API. It links each result to a specific enrolment and records the participant's finishing time, position, and status.
+ResultId: Uniquely identifies each result.
+EnrolmentId: Identifies the participant's race enrolment.
+FinishTime: Stores the finishing time. It is optional.
+Position: Records the participant's finishing position. It is optional.
+Status: Tracks the result status, defaulting to "Pending".
+Enrolment: Links the result to the relevant enrolment.
