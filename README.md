@@ -49,3 +49,13 @@ DistanceKm: Specifies the race distance in kilometres.
 MaxParticipants: Sets the maximum number of participants, defaulting to 100.
 Event: Represents the event associated with the category.
 Enrolments: Stores the list of participant enrolments for the category.
+The Enrolment model represents a participant's registration for a race category in the RaceDay API. It stores enrolment details and connects participants to categories and race results.
+EnrolmentId: Uniquely identifies each enrolment.
+ParticipantId: Identifies the participant who registered.
+CategoryId: Identifies the race category selected.
+EnrolmentDate: Records the registration date and time, defaulting to the current date and time.
+BibNumber: Stores the participant's race number.
+Status: Tracks the enrolment status, defaulting to "Registered".
+Participant: Links the enrolment to the registered user.
+Category: Links the enrolment to the selected race category.
+Result: Stores the participant's race result, if one exists. It is optional.
