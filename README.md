@@ -13,3 +13,8 @@ Register (POST /api/auth/register): Registers a new user as an Organiser or Part
 Login (POST /api/auth/login): Checks the user's login details. If successful, it stores the user's ID and role in the session and creates a session that can be used to authorise future requests.
 Logout (POST /api/auth/logout): Clears the current session to log the user out.
 Response handling: Uses the respond() method from api_base to return the appropriate HTTP response.
+The manage_categories controller manages event categories in the RaceDay API. It uses the category_data class to perform database operations and inherits shared functionality from api_base.
+View categories (GET): Allows anyone to view the categories belonging to an event.
+Create category (POST): Allows an Organiser to add a category by providing its name, distance in kilometres, and maximum number of participants.
+Update category (PUT): Allows an Organiser to update an existing category's details.
+Delete category (DELETE): Allows an Organiser to delete a category, including its enrolments and results, as handled by the database class.
