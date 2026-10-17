@@ -59,3 +59,14 @@ Status: Tracks the enrolment status, defaulting to "Registered".
 Participant: Links the enrolment to the registered user.
 Category: Links the enrolment to the selected race category.
 Result: Stores the participant's race result, if one exists. It is optional.
+The Event model represents a race event in the RaceDay API. It stores event information and defines the relationship between an event, its Organiser, and its categories.
+EventId: Uniquely identifies each event.
+OrganiserId: Identifies the Organiser responsible for the event.
+Name: Stores the event name.
+Description: Provides optional information about the event.
+EventDate: Records the date and time of the event.
+Location: Specifies where the event takes place.
+EventType: Defines the event type, which can be Run, Walk, or Cycle. The default is "Run".
+DistanceKm: Stores the optional overall event distance in kilometres.
+Organiser: Links the event to the user who organises it.
+Categories: Stores the list of categories belonging to the event.
