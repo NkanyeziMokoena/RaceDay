@@ -8,3 +8,8 @@ The api_base class is a shared base class for all controllers in the RaceDay API
 current_user_id: Retrieves the logged-in user's ID from the session. If no ID exists, it returns 0.
 respond() method: Converts the result returned by the database class into an HTTP response using the status code provided.
 db_result: Contains the database operation's result, which may include data, a status code, or a message.
+registration, login, and logout in the RaceDay API. It uses the user_data class to communicate with the database and inherits shared functionality from api_base.
+Register (POST /api/auth/register): Registers a new user as an Organiser or Participant using their full name, email, password, and role.
+Login (POST /api/auth/login): Checks the user's login details. If successful, it stores the user's ID and role in the session and creates a session that can be used to authorise future requests.
+Logout (POST /api/auth/logout): Clears the current session to log the user out.
+Response handling: Uses the respond() method from api_base to return the appropriate HTTP response.
