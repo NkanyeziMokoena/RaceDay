@@ -35,3 +35,9 @@ View category results (GET): Allows anyone to view a category's leaderboard, ord
 View a result (GET): Allows anyone to retrieve a specific result using its ID.
 Update a result (PUT): Allows an Organiser to update a result for an event they own.
 View my results (GET): Allows logged-in Participants to view their own race results
+The user_profile controller manages the profile of the currently logged-in user in the RaceDay API. It uses the user_data class to perform database operations and inherits common functionality from api_base.
+View profile (GET /api/users/me): Retrieves the logged-in user's profile information.
+Update profile (PUT /api/users/me): Allows the logged-in user to update their full name and email address.
+Session authorisation: The [session_authorize] attribute protects the entire controller, ensuring that only logged-in users can access these endpoints.
+User identification: The current_user_id property identifies the logged-in user so they can only access and update their own profile.
+Response handling: The respond() method returns the appropriate HTTP status code and response data.
