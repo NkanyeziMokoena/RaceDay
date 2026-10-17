@@ -1,4 +1,4 @@
-The session_authorizeAttribute class protects the RaceDay API by checking whether a user is logged in and has permission to access an endpoint.
+⁴The session_authorizeAttribute class protects the RaceDay API by checking whether a user is logged in and has permission to access an endpoint.
 The system has two roles: Organiser and Participant. The role_names class defines these roles, while the authorisation attribute checks the user's session and role before allowing access.
 HTTP 401 – Unauthorized: Returned when the user is not logged in.
 HTTP 403 – Forbidden: Returned when the user is logged in but does not have the required role.
@@ -70,3 +70,9 @@ EventType: Defines the event type, which can be Run, Walk, or Cycle. The default
 DistanceKm: Stores the optional overall event distance in kilometres.
 Organiser: Links the event to the user who organises it.
 Categories: Stores the list of categories belonging to the event.
+The code defines five Data Transfer Objects (DTOs) used in the RaceDay API to control how information is returned to the client. Each DTO selects the necessary information from a database model without exposing sensitive details, such as a user's password hash.
+UserDto: Returns user information, including the user ID, full name, email, role, and account creation date.
+EventDto: Returns event details, including the name, description, date, location, type, and distance.
+CategoryDto: Returns race category information, including its name, event ID, distance, and maximum number of participants.
+EnrolmentDto: Returns enrolment details, including the participant's name, category, event, registration date, bib number, and status.
+ResultDto: Returns race result information, including the participant's name, bib number, finishing time, position, and result status.
