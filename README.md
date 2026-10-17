@@ -91,3 +91,7 @@ Email: Stores the user's email address.
 PasswordHash: Stores the hashed password instead of the original password.
 CreatedAt: Records when the account was created, defaulting to the current date and time.
 Role: Links the user to their assigned role.
+The Role model defines the different types of users in the RaceDay API and manages the relationship between roles and user accounts.
+RoleId: Uniquely identifies each role.
+RoleName: Stores the role name, such as Organiser or Participant.
+Users: Contains a list of users assigned to that role.
