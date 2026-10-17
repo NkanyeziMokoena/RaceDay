@@ -23,3 +23,9 @@ Enrol in a category (POST): Allows a logged-in Participant to enter a race categ
 View my enrolments (GET): Allows Participants to view their own enrolments.
 View category enrolments (GET): Allows an Organiser to view all enrolments for a category belonging to an event they own.
 Cancel enrolment (DELETE): Allows an enrolment to be cancelled by the enrolled Participant or the Organiser who owns the event, subject to the checks in the database class.
+The manage_events controller manages race events in the RaceDay API. It uses the event_data class to handle database operations and inherits common functionality from api_base.
+View all events (GET): Allows anyone to view all events, ordered by date.
+View an event (GET): Allows anyone to retrieve a specific event using its ID.
+Create an event (POST): Allows a logged-in Organiser to create an event by providing its name, date, location, event type, and other details.
+Update an event (PUT): Allows an Organiser to update an event they own.
+Delete an event (DELETE): Allows an Organiser to delete an event, including its associated categories, enrolments, and results, as handled by the database class.
