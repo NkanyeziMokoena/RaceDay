@@ -134,3 +134,6 @@ get_my_enrolments(): Retrieves all enrolments belonging to the logged-in Partici
 get_category_enrolments(): Retrieves all enrolments for a category after verifying that the Organiser owns the associated event.
 cancel_enrolment(): Cancels an enrolment if the request is made by the enrolled Participant or the Organiser who owns the event.
 Error handling: Uses try-catch to handle database update errors during enrolment and returns a 409 Conflict response if the registration cannot be completed.
+update_event() – Updates an existing event after checking that it exists, that the logged-in organiser owns it, and that the new details are valid.
+delete_event() – Deletes an event only if it exists and belongs to the logged-in organiser.
+Important Features
