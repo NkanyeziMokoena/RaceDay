@@ -95,3 +95,12 @@ The Role model defines the different types of users in the RaceDay API and manag
 RoleId: Uniquely identifies each role.
 RoleName: Stores the role name, such as Organiser or Participant.
 Users: Contains a list of users assigned to that role.
+The launchSettings.json file configures how the RaceDay API runs during development in Visual Studio or through the .NET CLI.
+$schema: Specifies the schema used to validate the launch settings file.
+iisSettings: Configures IIS Express, including authentication settings and application ports.
+http profile: Runs the API using HTTP at http://localhost:5080.
+https profile: Runs the API using HTTPS at https://localhost:7080 and also supports HTTP on port 5080.
+IIS Express profile: Allows the application to run using IIS Express.
+launchBrowser: Automatically opens a browser when the application starts.
+launchUrl: Opens the Swagger page for testing API endpoints.
+ASPNETCORE_ENVIRONMENT: Sets the environment to Development, enabling development-specific configuration.
