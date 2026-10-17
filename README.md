@@ -29,3 +29,9 @@ View an event (GET): Allows anyone to retrieve a specific event using its ID.
 Create an event (POST): Allows a logged-in Organiser to create an event by providing its name, date, location, event type, and other details.
 Update an event (PUT): Allows an Organiser to update an event they own.
 Delete an event (DELETE): Allows an Organiser to delete an event, including its associated categories, enrolments, and results, as handled by the database class.
+The manage_results controller manages race results in the RaceDay API. It uses the result_data class to perform database operations and inherits shared functionality from api_base.
+Record a result (POST): Allows an Organiser to record a participant's finishing time and position for an event they own.
+View category results (GET): Allows anyone to view a category's leaderboard, ordered by finishing position.
+View a result (GET): Allows anyone to retrieve a specific result using its ID.
+Update a result (PUT): Allows an Organiser to update a result for an event they own.
+View my results (GET): Allows logged-in Participants to view their own race results
